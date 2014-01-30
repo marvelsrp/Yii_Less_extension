@@ -8,13 +8,13 @@ yii-less-compiler
 ```php
 'components'=>array(
 ...
-        'clientScript' => array(
+        'lessScript' => array(
             'class' => 'application.extensions.less.IClientscript',
         ),
 ...)
 ```
 3. Create folder **"protected/less"** and add here .less files/dir.
-4. Use: ```Yii::app()->clientScript->registerLessFile($file_name, $less_subdir='');```
+4. Use: ```Yii::app()->lessScript->registerLessFile($file_name, $less_subdir='');```
 
 P.S. need clear "protected/runtime/less" and "/assets"
 
@@ -22,12 +22,12 @@ P.S. need clear "protected/runtime/less" and "/assets"
 
 **1. protected/less/main.less :**
 ```php
-Yii::app()->clientScript->registerLessFile('main');
+Yii::app()->lessScript->registerLessFile('main');
 ```
 Publish to "assets/{hash}/main.css"
 
 **2. protected/less/auth/login.less :**
 ```php
-Yii::app()->clientScript->registerLessFile('login','auth');
+Yii::app()->lessScript->registerLessFile('login','auth');
 ```
 Publish to "assets/{hash}/auth/login.css"
